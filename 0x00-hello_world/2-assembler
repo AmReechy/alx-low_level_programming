@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE -O "${CFILE::-1}"s
+gcc -S $CFILE -o "${CFILE::-1}"s
