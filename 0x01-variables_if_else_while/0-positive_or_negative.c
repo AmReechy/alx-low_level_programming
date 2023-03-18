@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 /**
 * main - Prints a random numbers (positive, 0 or negative)
 * Author: Richard Amoo
