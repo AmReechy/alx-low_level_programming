@@ -6,7 +6,7 @@
 * Return: Always 0 (Success)
 */
 int main(void)
-{int num1 = 1;
+{int num1 = 0;
 int num2;
 while (num1 < 8)
 	{num2 = num1 + 1;
