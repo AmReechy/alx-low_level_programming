@@ -8,12 +8,15 @@
 int main(void)
 {int num1 = 0;
 int num2;
-while (num1 < 8)
+while (num1 < 9)
 	{num2 = num1 + 1;
 	while (num2 < 10)
 		{putchar('0' + num1);
 		putchar('0' + num2);
 		putchar(',');
+		if (num1 == 8)
+		{break;
+		}
 		putchar(' ');
 		num2++;
 		}
