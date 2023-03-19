@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/*----
 * main - prints all possible combinations of two two-digit numbers
 * Author: Richard Amoo
 * Return: 0
@@ -15,7 +15,7 @@ while (a < 99)
 		putchar(' ');
 		putchar('0' + b / 10);
 		putchar('0' + b % 10);
-		if (b == 99)
+		if (a == 98)
 		{putchar('\n');
 		break;
 		}
