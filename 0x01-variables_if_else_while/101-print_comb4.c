@@ -22,7 +22,7 @@ while (x < 8)
 				break;
 			}
 			putchar(',');
-			putchar('\n');
+			putchar(' ');
 			z++;
 			}
 		y++;
