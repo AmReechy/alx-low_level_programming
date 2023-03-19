@@ -13,10 +13,10 @@ while (num1 < 9)
 	while (num2 < 10)
 		{putchar('0' + num1);
 		putchar('0' + num2);
-		putchar(',');
 		if (num1 == 8)
 		{break;
 		}
+		putchar(',');
 		putchar(' ');
 		num2++;
 		}
