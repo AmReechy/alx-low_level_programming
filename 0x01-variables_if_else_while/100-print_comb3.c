@@ -14,7 +14,8 @@ while (num1 < 9)
 		{putchar('0' + num1);
 		putchar('0' + num2);
 		if (num1 == 8)
-		{break;
+		{putchar('\n');
+			break;
 		}
 		putchar(',');
 		putchar(' ');
