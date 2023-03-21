@@ -11,6 +11,7 @@
 void print_alphabet(void)
 {
 	int letter = 0;
+
 	while (letter <= 25)
 		{_putchar(letter + 'a');
 		letter++;
