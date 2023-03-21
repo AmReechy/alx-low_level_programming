@@ -8,7 +8,7 @@
 /**
  * print_alphabet - prints 10 times the alphabet, in lowercase, followed by a new line.
  */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	int letter = 0;
 
