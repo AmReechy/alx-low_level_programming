@@ -1,24 +1,23 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
- * main - main block
- *
- * Return: 0.
+ * print_to_98 - print all natural numbers from n to 98.
+ * @n: the number to start counting from n to 98
+ * Return: Always 0.
  */
-int main(void)
-
+void print_to_98(int n)
 {
-	int c = 0;
-	int sum = 0;
-
-	while (c < 1024)
+	while (n < 98)
 	{
-		if (c % 3 == 0 || c % 5 == 0)
-		{
-			sum += c;
-		}
-		c++;
+		printf("%i, ", n);
+		n++;
 	}
-	printf("%i\n", sum);
-	return (0);
+	while (n > 98)
+	{
+		printf("%i, ", n);
+		n--;
+	}
+	printf("98");
+	putchar('\n');
 }
