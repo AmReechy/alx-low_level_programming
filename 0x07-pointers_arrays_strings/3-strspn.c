@@ -37,6 +37,10 @@ unsigned int _strspn(char *s, char *accept)
 			}
 			check++;
 		}
+		if (check == x)
+		{
+			break;
+		}
 		y++;
 		ptrs++;
 	}
