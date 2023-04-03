@@ -11,9 +11,9 @@ char *_strchr(char *s, char c)
 {
 	char *ptr_to_s = s;
 
-	while ( 3 != 4)
+	while ( 3)
 	{
-		if (*ptr_to_s == c)
+		if (*ptr_to_s == '\0' || *ptr_to_s == c)
 		{
 			break;
 		}
