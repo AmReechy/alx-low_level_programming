@@ -10,40 +10,38 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *p_s = s;
-	unsigned int x, y, z = 0, prevmin = 0;
+	char *ps = s;
+	char *pacc = accept;
+	int z = 0, prevmin = 0;
 
-	while (*p_s != '\0')
-	{
-		x++;
-		p_s++;
-	}
-	y = 0;
-	p_s = s;
-
-	while (*(accept + y) != '\0')
+	while (*pacc != '\0')
 	{
 		z = 1;
+		ps = s;
 
-		while (*p_s != '\0')
+		while (*ps != '\0')
 		{
-			if (*p_s == *(accept + y))
+			if (*ps == *pacc)
 			{
 				if (z < prevmin)
 				{
 					prevmin = z;
-					break;
 				}
 				break;
 			}
-			p_s++;
+			ps++;
 			z++;
 		}
-		y++;
+		pacc++;
 	}
+	ps = s;
+
 	if (prevmin > 0)
-	{
-		return (p_s + (prevmin - 1));
+	{	while (prevmin > 0)
+		{	ps++;
+			prevmin--;
+		}
+		return (ps);
 	}
 	else if (prevmin < 1)
 	{
