@@ -12,14 +12,22 @@ char *_strpbrk(char *s, char *accept)
 {
 	char *ps = s;
 	char *pacc = accept;
-	int z = 0, prevmin = 0;
+	int y, m, r, z = 0, prevmin = 0;
 
-	while (*pacc != '\0')
+	for (y = 0; *pacc != '\0'; y++)
+	{	pacc++;
+	}
+	for (m = 0; *ps != '\0'; m++)
+	{	ps++;
+	}
+
+	while (*pacc != '\0' && y > 0)
 	{
 		z = 1;
 		ps = s;
+		r = m;
 
-		while (*ps != '\0')
+		while (r > 1 && *ps != '\0')
 		{
 			if (*ps == *pacc)
 			{
@@ -31,8 +39,10 @@ char *_strpbrk(char *s, char *accept)
 			}
 			ps++;
 			z++;
+			r--;
 		}
 		pacc++;
+		y--;
 	}
 	ps = s;
 

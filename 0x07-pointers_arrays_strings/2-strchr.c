@@ -15,7 +15,7 @@ char *_strchr(char *s, char c)
 
 	while (3)
 	{
-		if (*ptr_to_s == '\0' || *ptr_to_s == c)
+		if (*ptr_to_s == c)
 		{
 			break;
 		}
