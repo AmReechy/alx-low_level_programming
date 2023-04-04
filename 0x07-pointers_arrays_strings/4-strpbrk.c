@@ -20,7 +20,7 @@ char *_strpbrk(char *s, char *accept)
 	}
 	y = 0;
 	unsigned int prevmin = 0;
-	p_s = s
+	p_s = s;
 
 	while (*(accept + y) != '\0')
 	{
@@ -44,11 +44,12 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (prevmin > 0)
 	{
-		return (p_s +(prevmin - 1));
+		return (p_s + (prevmin - 1));
 	}
-	else if (prevmin < 1);
+	else if (prevmin < 1)
 	{
 		return (NULL);
 	}
+
 	return (NULL);
 }
