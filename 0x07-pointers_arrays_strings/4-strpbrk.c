@@ -11,7 +11,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	char *p_s = s;
-	unsigned int x, y, z = 0;
+	unsigned int x, y, z = 0, prevmin = 0;
 
 	while (*p_s != '\0')
 	{
@@ -19,7 +19,6 @@ char *_strpbrk(char *s, char *accept)
 		p_s++;
 	}
 	y = 0;
-	unsigned int prevmin = 0;
 	p_s = s;
 
 	while (*(accept + y) != '\0')
