@@ -20,10 +20,10 @@ void print_diagsums(int *a, int size)
 	printf("%d, ", leftdiag_sum);
 	x = size - 1;
 
-	while (x <= ((size * size) - 1))
+	while (x <= ((size * size) - (size - 1)))
 	{
 		rightdiag_sum += a[x];
 		x += size - 1;
 	}
-	printf("%d", rightdiag_sum);
+	printf("%d\n", rightdiag_sum);
 }
