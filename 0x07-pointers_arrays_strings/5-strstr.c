@@ -10,6 +10,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int a = 0, b = 0, c = 0, d = 0;
+
 	while (needle[c])
 	{
 		c++;
@@ -19,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[a] == needle[b])
 		{
-			while (needle[b] && haystak[a + b])
+			while (needle[b] && haystack[a + b])
 			{
 				if (needle[b] == haystack[a + b])
 				{
