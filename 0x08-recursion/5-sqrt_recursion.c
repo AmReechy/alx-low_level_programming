@@ -9,10 +9,10 @@
 
 int _sqrt_recursion(int n)
 {
-	return realsqrt(n,0);
+	return (realsqrt(n, 0));
 }
 
-int realsqrt(int x,int count)
+int realsqrt(int x, int count)
 {
 	if ((count * count) == x)
 	{
@@ -22,5 +22,5 @@ int realsqrt(int x,int count)
 	{
 		return (-1);
 	}
-	return (realsqrt(x,(count + 1)));
+	return (realsqrt(x, (count + 1)));
 }
