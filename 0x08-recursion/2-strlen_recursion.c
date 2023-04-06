@@ -15,7 +15,7 @@ int _strlen_recursion(char *s)
 	else
 	{
 		char *spointer = s + 1;
-		return 1 + _strlen_recursion(spointer);
+
+		return (1 + _strlen_recursion(spointer));
 	}
 }
-		
