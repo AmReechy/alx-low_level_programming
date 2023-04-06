@@ -9,19 +9,18 @@
 
 int _sqrt_recursion(int n)
 {
-	int sub = (count * 2) - 1;
-	int new = n - sub;
+	return realsqrt(n,0);
+}
 
-	if (n < 0)
-	{
-		return (-1);
-	}
-	if (new == 0)
+int realsqrt(int x,int count)
+{
+	if ((count * count) == x)
 	{
 		return (count);
 	}
-
-	count++;
-
-	_sqrt_recursion(new);
+	if (x < (count * count))
+	{
+		return (-1);
+	}
+	return (realsqrt(x,(count + 1)));
 }
