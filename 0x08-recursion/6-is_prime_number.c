@@ -20,6 +20,10 @@ int is_prime_number(int n)
 
 int primecheck(int num, int div)
 {
+	if ((num % 2) == 0 || (num % 3) == 0 || (num % 5) == 0)
+	{
+		return (0);
+	}
 	if (num < 0)
 	{
 		num = num * (-1);
