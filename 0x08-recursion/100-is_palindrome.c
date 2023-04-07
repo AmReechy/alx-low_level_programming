@@ -9,8 +9,7 @@
 int is_palindrome(char *s)
 {
 	int length = checklen(s);
-	length--;
-	return (palindrome(s, 0, length));
+	return (palindrome(s, 0, length - 1));
 }
 
 /**
@@ -19,7 +18,7 @@ int is_palindrome(char *s)
 
 int palindrome(char *str, int i, int j)
 {
-	if (i >= j)
+	if ((i == j || i == j - 2) && (*(str + i) == *(str + j)))
 	{
 		return (1);
 	}
