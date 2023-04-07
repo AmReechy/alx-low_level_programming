@@ -18,7 +18,7 @@ int is_palindrome(char *s)
 
 int palindrome(char *str, int i, int j)
 {
-	if ((i == j || i == j - 2) && (*(str + i) == *(str + j)))
+	if ((i == (j - 1) || i == (j - 2)) && (*(str + i) == *(str + j)))
 	{
 		return (1);
 	}
