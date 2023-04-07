@@ -10,8 +10,12 @@ int is_palindrome(char *s)
 {
 	int length = checklen(s);
 	length--;
-	return (palindrome(s, 0, length);
+	return (palindrome(s, 0, length));
 }
+
+/**
+ * palindrome - actual palindrome checker
+ */
 
 int palindrome(char *str, int i, int j)
 {
@@ -36,7 +40,7 @@ int checklen(char *str)
         }
         else
         {
-                char *spointer = s + 1;
+                char *spointer = str + 1;
 
                 return (1 + checklen(spointer));
         }
