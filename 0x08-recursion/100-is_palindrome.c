@@ -10,33 +10,35 @@
 int is_palindrome(char *s)
 {
 	int length = checklen(s);
-	printf("length = %d\n", length);
-	return (palindrome(s, 0, (length - 1)));
+	return (palindrome(s, 0, length - 1));
 }
 
 /**
  * palindrome - actual palindrome checker
+ * @str: the given string
+ * @i: the index from the start of the string
+ * @j: the index to the end of the string
+ * Return: 0 or 1
  */
 
 int palindrome(char *str, int i, int j)
 {
-	if (*(str + 1) == *(str + j))
+	if (i < j && (str[i] == str[j]))
 	{
-		if ((i == j - 2) || (i == j - 1))
+		if ((i + 2 == j) || (i + 1 == j))
 		{
 			return (1);
 		}
-	}
-	if (*(str + i) != *(str + j))
-	{
-		return (0);
-	}
-	if (*(str + i) == *(str + j))
-	{
-		palindrome(str, i + 1, j - 1);
+		return palindrome(str, i + 1, j - 1);
 	}
 	return (0);
 }
+
+/**
+ * checklen - helper function used to calculate length of the given string
+ * @str: the given string as a parameter
+ * Return: integer value representing lenght of string
+ */
 
 int checklen(char *str)
 {
