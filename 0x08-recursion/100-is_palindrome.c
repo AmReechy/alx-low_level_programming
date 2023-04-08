@@ -10,6 +10,7 @@
 int is_palindrome(char *s)
 {
 	int length = checklen(s);
+
 	return (palindrome(s, 0, length - 1));
 }
 
@@ -29,7 +30,7 @@ int palindrome(char *str, int i, int j)
 		{
 			return (1);
 		}
-		return palindrome(str, i + 1, j - 1);
+		return (palindrome(str, i + 1, j - 1));
 	}
 	return (0);
 }
@@ -42,14 +43,14 @@ int palindrome(char *str, int i, int j)
 
 int checklen(char *str)
 {
-        if (*str == '\0')
-        {
-                return (0);
-        }
-        else
-        {
-                char *spointer = str + 1;
+	if (*str == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		char *spointer = str + 1;
 
-                return (1 + checklen(spointer));
-        }
+		return (1 + checklen(spointer));
+	}
 }
