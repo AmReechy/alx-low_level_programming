@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * is_palindrome - checks if a string is a palindrome and returns a boolean
@@ -9,7 +10,8 @@
 int is_palindrome(char *s)
 {
 	int length = checklen(s);
-	return (palindrome(s, 0, length - 1));
+	printf("length = %d\n", length);
+	return (palindrome(s, 0, (length - 1)));
 }
 
 /**
@@ -18,15 +20,20 @@ int is_palindrome(char *s)
 
 int palindrome(char *str, int i, int j)
 {
-	if ((i == (j - 1) || i == (j - 2)) && (*(str + i) == *(str + j)))
+	if (*(str + 1) == *(str + j))
 	{
-		return (1);
+		if ((i == j - 2) || (i == j - 1))
+		{
+			return (1);
+		}
+	}
+	if (*(str + i) != *(str + j))
+	{
+		return (0);
 	}
 	if (*(str + i) == *(str + j))
 	{
-		i++;
-		j--;
-		palindrome(str, i, j);
+		palindrome(str, i + 1, j - 1);
 	}
 	return (0);
 }
