@@ -10,7 +10,7 @@
 int main(int __attribute__ ((unused)) argc, char *argv[])
 {
 	char *pointr = *argv;
-	
+
 	while (*pointr)
 	{
 		_putchar(*pointr);
