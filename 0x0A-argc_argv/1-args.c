@@ -3,8 +3,8 @@
 
 /**
  * main - prints the number of arguments passed to it
- * @argc: argument count of main function
- * @agrv: argument vector of main
+ * @ac: argument count of main function
+ * @av: argument vector of main
  * Return: 0 if successful
  */
 
