@@ -19,14 +19,15 @@ int main(int ac, char *av[])
 		return (1);
 	}
 	if (ac == 2 && atoi(av[1]))
-	{	
+	{
 		cents = atoi(av[1]);
 		if (cents < 0)
 		{	printf("%d\n", 0);
 			return (0);
 		}
 		else if (cents >= 0)
-		{	if (cents >= 25)
+		{	
+			if (cents >= 25)
 			{change += cents / 25;
 			cents = (cents % 25);
 			}
