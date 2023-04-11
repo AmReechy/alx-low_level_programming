@@ -26,7 +26,7 @@ int main(int ac, char *av[])
 			return (0);
 		}
 		else if (cents >= 0)
-		{	
+		{
 			if (cents >= 25)
 			{change += cents / 25;
 			cents = (cents % 25);
