@@ -21,9 +21,12 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	duplicate = (char *) malloc(n * sizeof(char));
-
-	for (count = 0; count < n; count++)
+	duplicate = (char *) malloc(n + 1 * sizeof(char));
+	if (duplicate == NULL)
+	{
+		return (NULL);
+	}
+	for (count = 0; count < n + 1; count++)
 	{
 		duplicate[count] = str[count];
 	}
