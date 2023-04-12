@@ -17,9 +17,9 @@ char *_strdup(char *str)
 	unsigned int count;
 
 	n = strlen(str);
-	if (str == NULL || str == 0)
+	if (str == NULL)
 	{
-		return (NULL);
+		return (1);
 	}
 	duplicate = (char *) malloc(n + 1 * sizeof(char));
 	if (duplicate == NULL)
