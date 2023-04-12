@@ -16,7 +16,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int n, m, l1, l2;
 	char *p1 = s1;
 	char *p2 = s2;
-	
+
 	if (!(*p1))
 	{
 		p1 = "";
@@ -35,16 +35,16 @@ char *str_concat(char *s1, char *s2)
 	newstr = malloc(sizeof(char) * (l1 + l2 + 1));
 	if (newstr == NULL)
 		return (NULL);
-	for (n = 0; n <= strlen(s1); n++)
+	for (n = 0; n <= l1; n++)
 	{
-		if (n == strlen(s1))
+		if (n == l1)
 			break;
 		newstr[n] = *p1;
 		p1++;
 	}
-	for (m = 0; m <= strlen(s2); m++)
+	for (m = 0; m <= l2; m++)
 	{
-		if (m == strlen(s2))
+		if (m == l2)
 			break;
 		newstr[n + m] = *p2;
 		p2++;
@@ -52,4 +52,3 @@ char *str_concat(char *s1, char *s2)
 	newstr[l1 + l2 + 1] = '\0';
 	return (newstr);
 }
-
