@@ -21,20 +21,35 @@ char *str_concat(char *s1, char *s2)
 
 	if (p1 == NULL && p2 != NULL)
 	{
-		return (p2);
+		newstr = (char *) malloc((strlen(s2) + 1) * sizeof(char));
+
+		for (j = 0; j <= strlen(s2); j++)
+		{
+			newstr[j] = s2[j];
+		}
+		return (newstr);
 	}
+	j = 0;
+
 	if (p2 == NULL && p1 != NULL)
 	{
-		return (p1);
+		newstr = (char *) malloc((strlen(s1) + 1) * sizeof(char));
+
+                for (j = 0; j <= strlen(s1); j++)
+                {
+                        newstr[j] = s1[j];
+                }
+                return (newstr);
 	}
 	if (s1 == NULL && s2 == NULL)
 	{
-		return (NULL);
+		newstr = NULL;
+		return (newstr);
 	}
 	newstr = (char *) malloc(length + 1 * sizeof(char));
 	if (newstr == NULL)
 	{
-		return (NULL);
+		return (newstr);
 	}
 	n = 0;
 
