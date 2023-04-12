@@ -17,15 +17,24 @@ char *str_concat(char *s1, char *s2)
 	char *p1 = s1;
 	char *p2 = s2;
 
-	if (p1 == NULL)
+	if (p1 == NULL && p2 != NULL)
 	{
 		p1 = "";
 		l1 = 0;
+		l2 = strlen(s2);
 	}
-	if (p2 == NULL)
+	if (p2 == NULL && p1 != NULL)
 	{
 		p2 = "";
 		l2 = 0;
+		l1 = strlen(s1);
+	}
+	if (p1 == NULL && p2 == NULL)
+	{
+		l1 = 0;
+		l2 = 0;
+		p1 = "";
+		p2 = "";
 	}
 	if (p1 != NULL && p2 != NULL)
 	{
