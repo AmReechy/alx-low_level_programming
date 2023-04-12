@@ -15,34 +15,44 @@ char *str_concat(char *s1, char *s2)
 {
 	unsigned int n, j;
 	char *newstr;
+	char *p1 = s1;
+	char *p2 = s2;
 	unsigned int length = strlen(s1) + strlen(s2);
 
-	if (s1 == NULL)
+	if (p1 == NULL && p2 != NULL)
 	{
-		return (s2);
+		return (p2);
 	}
-	if (s2 == NULL)
+	if (p2 == NULL and p1 != NULL)
 	{
 		return (s1);
 	}
 	if (s1 == NULL && s2 == NULL)
 	{
-		return ("");
+		return (NULL);
 	}
 	newstr = (char *) malloc(length + 1 * sizeof(char));
 	if (newstr == NULL)
 	{
 		return (NULL);
 	}
-	for (n = 0; n < strlen(s1); n++)
-	{
-		newstr[n] = s1[n];
-	}
-	n += 1;
+	n = 0;
 
-	for (j = 0; j <= strlen(s2); j++)
+	while (n < strlen(s1))
 	{
-		newstr[n + j] = s2[j];
+		*newstr = *p1;
+		newstr++;
+		p1++;
+		n++;
+	}
+	j = 0;
+
+	while (j <= strlen(s2))
+	{
+		newstr++;
+		*newstr = *p2;
+		p2++;
+		j++;
 	}
 	return (newstr);
 }
