@@ -17,8 +17,9 @@ char *_strdup(char *str)
 	unsigned int count;
 
 	n = strlen(str);
-	if (str == NULL)
+	if (str == NULL || strlen(str) == 0)
 	{
+		printf("failed to allocate memory\n");
 		return (NULL);
 	}
 	duplicate = (char *) malloc(n + 1 * sizeof(char));
