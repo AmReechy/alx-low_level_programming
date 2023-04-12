@@ -23,9 +23,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (p2);
 	}
-	if (p2 == NULL and p1 != NULL)
+	if (p2 == NULL && p1 != NULL)
 	{
-		return (s1);
+		return (p1);
 	}
 	if (s1 == NULL && s2 == NULL)
 	{
