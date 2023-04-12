@@ -52,3 +52,4 @@ char *str_concat(char *s1, char *s2)
 	newstr[l1 + l2 + 1] = '\0';
 	return (newstr);
 }
+
