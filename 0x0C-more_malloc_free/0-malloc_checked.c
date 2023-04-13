@@ -11,12 +11,12 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *memptr = malloc(sizeof(unsigned int) * b);
+	void *memptr = malloc(sizeof(unsigned int) * (b + 1));
 
 	if (memptr == NULL)
 	{
-		reeturn (NULL);
 		exit(98);
+		return (NULL);
 	}
 	return (memptr);
 }
