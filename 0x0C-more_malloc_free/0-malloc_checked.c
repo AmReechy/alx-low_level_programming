@@ -10,7 +10,7 @@
  */
 
 void *malloc_checked(unsigned int b)
-i{
+{
 	void *memptr = malloc(b);
 
 	if (memptr == NULL)
