@@ -14,6 +14,9 @@ void *malloc_checked(unsigned int b)
 	void *memptr = malloc(sizeof(unsigned int) * b);
 
 	if (memptr == NULL)
+	{
+		reeturn (NULL);
 		exit(98);
+	}
 	return (memptr);
 }
