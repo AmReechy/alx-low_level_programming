@@ -10,8 +10,8 @@
  */
 
 void *malloc_checked(unsigned int b)
-{
-	void *memptr = malloc(sizeof(unsigned int) * (b + 1));
+i{
+	void *memptr = malloc(b);
 
 	if (memptr == NULL)
 	{
