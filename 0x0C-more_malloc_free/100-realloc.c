@@ -40,7 +40,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	for (n = 0; n < newlen; n++)
 		newmem[n] = ptr2[n];
-
+	ptr2 = NULL;
 	free(ptr);
 	newmem = (void *) newmem;
 	return (newmem);
