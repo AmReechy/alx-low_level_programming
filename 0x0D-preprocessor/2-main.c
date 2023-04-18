@@ -8,11 +8,9 @@
 
 int main()
 {
-	//trying out some comments with double forward slashes
 
 	printf("%s\n", __FILE__);
 
-	//putting in another comment line;
 	return (0);
 
 }
