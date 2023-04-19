@@ -21,17 +21,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	lname = calclen(name);
 	lowner = calclen(owner);
 
-	dogname = (char *) malloc(lname * sizeof(char));
-	dogowner = (char *) malloc(lowner * sizeof(char));
+	newdog->name = (char *) malloc((lname + 1) * sizeof(char));
+	newdog->owner = (char *) malloc((lowner + 1) * sizeof(char));
 	newdog = malloc(sizeof(dog_t));
 
 	if (newdog == NULL)
 		return (NULL);
-	strcpy(dogname, name);
-	strcpy(dogowner, owner);
-	
-	strcpy(newdog->name, dogname);
-	strcpy(newdog->owner, dogowner);
+
+	strcpy(newdog->name, name);
+	strcpy(newdog->owner, owner);
 	newdog->age = age;
 
 	return (newdog);
