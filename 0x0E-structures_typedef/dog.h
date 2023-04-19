@@ -23,5 +23,6 @@ typedef struct dog dog_t;
 char *_strcpy(char *dest, char *src);
 unsigned int calclen(char *s);
 dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
 
 #endif
