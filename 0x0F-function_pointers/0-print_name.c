@@ -15,6 +15,6 @@ void print_name(char *name, void (*f)(char *))
 	int x = 5;
 
 	while ((!f || !name) && x > 4)
-		return (NULL);
+		return;
 	f(name);
 }
