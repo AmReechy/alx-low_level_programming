@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
+#include "function_pointers.h"
 
 /**
  * int_index - searches for and compare integers in tehe array
