@@ -6,7 +6,7 @@
  * int_index - searches for and compare integers in tehe array
  * @array: array of integers
  * @size: number of elements int the given array
- * @comp: pointer to the function for making comparisons
+ * @cmp: pointer to the function for making comparisons
  * Return: an integer value
  */
 
