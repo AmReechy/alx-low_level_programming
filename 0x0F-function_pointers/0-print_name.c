@@ -14,7 +14,7 @@ void print_name(char *name, void (*f)(char *))
 {
 	int x = 5;
 
-	while ((!f || !name) && x > 4)
+	if ((f == NULL || !name) && x > 4)
 		return;
 	f(name);
 }
