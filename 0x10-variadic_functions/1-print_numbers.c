@@ -24,18 +24,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		nextnum = va_arg(argslist, int);
 		if (separator == NULL)
 			printf("%d", nextnum);
+		else if (separator && k == 0)
+			printf("%d", nextnum);
 		else
-		{
-			if (k == n - 1)
-                	{
-                        	printf("%d\n", nextnum);
-                        	break;
-                	}
-			else
-				printf("%d%s", nextnum, separator);
-		}
+			printf("%s%d", separator, nextnum);
 		k++;
 	}
 
 	va_end(argslist);
+	printf("\n");
 }
