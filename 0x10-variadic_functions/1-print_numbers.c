@@ -22,16 +22,17 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	while (k < n)
 	{
 		nextnum = va_arg(argslist, int);
-		if (k == n - 1)
-		{
-			printf("%d\n", nextnum);
-			break;
-		}
 		if (separator == NULL)
 			printf("%d", nextnum);
 		else
 		{
-			printf("%d%s", nextnum, separator);
+			if (k == n - 1)
+                	{
+                        	printf("%d\n", nextnum);
+                        	break;
+                	}
+			else
+				printf("%d%s", nextnum, separator);
 		}
 		k++;
 	}
