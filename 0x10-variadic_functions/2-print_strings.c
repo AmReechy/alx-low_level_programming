@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			store = "(nil)";
 		if (separator == NULL)
 			printf("%s", store);
-		else if (i == 0 && separator)
+		else if (k == 0 && separator)
 			printf("%s", store);
 
 		else
