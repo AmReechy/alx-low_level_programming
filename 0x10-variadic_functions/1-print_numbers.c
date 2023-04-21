@@ -21,12 +21,19 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	k = 0;
 	while (k < n)
 	{
-		if (k == n - 1)
-			separator = "\n";
-		if (separator == NULL)
-			separator = "";
 		nextnum = va_arg(argslist, int);
-		printf("%d%s", nextnum, separator);
+		if (k == n - 1)
+		{
+			printf("%d\n", nextnum);
+			break;
+		}
+		if (separator == NULL)
+			printf("%d", nextnum);
+		else
+		{
+			nextnum = va_arg(argslist, int);
+			printf("%d%s", nextnum, separator);
+		}
 		k++;
 	}
 
