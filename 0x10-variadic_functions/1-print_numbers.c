@@ -31,7 +31,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			printf("%d", nextnum);
 		else
 		{
-			nextnum = va_arg(argslist, int);
 			printf("%d%s", nextnum, separator);
 		}
 		k++;
