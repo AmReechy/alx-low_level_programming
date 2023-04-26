@@ -8,10 +8,11 @@
   * Return: pointer to the beginning of located substring or
   * Null if the substring is not found. l
   */
- char *_strstr(char *haystack, char *needle)
- {
-         char *bhayst;
-         char *pneed;
+ 
+char *_strstr(char *haystack, char *needle)
+{
+        char *bhayst;
+        char *pneed;
 
          while (*haystack != '\0')
          {
@@ -27,4 +28,4 @@
                  haystack = bhayst + 1;
          }
          return (0);
- }
+}
