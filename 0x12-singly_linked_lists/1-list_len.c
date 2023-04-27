@@ -3,7 +3,6 @@
 /**
  * list_len - calculates the number of elements in a linked list_t list.
  * @h: The given linked list_t list.
- * @elements: a counter var for size_t
  * Return: The number of elements in h.
  */
 size_t list_len(const list_t *h)
