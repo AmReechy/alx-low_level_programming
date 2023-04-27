@@ -14,5 +14,5 @@ void hare(void)
 		printf("You're beat! and yet, you must allow,\n"
 	       "I bore my house upon my back!\n");
 
-	m = j -4;
+	m = j - 4;
 }
