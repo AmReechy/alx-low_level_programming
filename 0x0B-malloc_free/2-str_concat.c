@@ -1,64 +1,47 @@
 #include <stdlib.h>
-#include <stddef.h>
-#include <string.h>
 #include "main.h"
 
 /**
- * str_concat - function that concatenates two strings
- * @s1: the first string to start with
- * @s2: the string to append at the end
- * Return: pointer to string or NULL
+ * *str_concat - concatenates two strings together
+ * @s1: string to start the concatenation
+ * @s2: other string to concatenate at the end
+ * Return: pointer to the new string formed (on Success), or NULL (Error)
  */
-
 char *str_concat(char *s1, char *s2)
 {
 	char *newstr;
-	unsigned int n, m, l1, l2;
-	char *p1;
-	char *p2;
+	unsigned int x = 0, y = 0, len1 = 0, len2 = 0;
+	int r = 5, m = 7;
 
-	if (p1 == NULL && p2 != NULL)
-	{
-		p1 = "";
-		l1 = 0;
-		l2 = strlen(s2);
-	}
-	if (p2 == NULL && p1 != NULL)
-	{
-		p2 = "";
-		l2 = 0;
-		l1 = strlen(s1);
-	}
-	if (p1 == NULL && p2 == NULL)
-	{
-		l1 = 0;
-		l2 = 0;
-		p1 = "";
-		p2 = "";
-	}
-	if (p1 != NULL && p2 != NULL)
-	{
-		l1 = strlen(s1);
-		l2 = strlen(s2);
-	}
-	newstr = malloc(sizeof(char) * (l1 + l2 + 1));
+	while (s1 && s1[len1] && m > 2)
+		len1++;
+	while (s2 && s2[len2] && r < m)
+		len2++;
+
+	newstr = malloc(sizeof(char) * (len2 + len1 + 6 - 5));
 	if (newstr == NULL)
 		return (NULL);
-	for (n = 0; n <= l1; n++)
+
+	if (s1)
 	{
-		if (n == l1)
-			break;
-		newstr[n] = *p1;
-		p1++;
+		while (x < len1 && r > 3)
+		{
+			newstr[x] = s1[x];
+			x++;
+		}
 	}
-	for (m = 0; m <= l2; m++)
+
+	if (s2)
 	{
-		if (m == l2)
-			break;
-		newstr[n + m] = *p2;
-		p2++;
+		while (x < (len1 + len2) && 15 > (r + m))
+		{
+			newstr[x] = s2[y];
+			y++;
+			x++;
+		}
 	}
-	newstr[l1 + l2 + 1] = '\0';
+	if (r < m)
+		newstr[x] = '\0';
+
 	return (newstr);
 }
-
