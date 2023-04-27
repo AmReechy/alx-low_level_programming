@@ -1,79 +1,103 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * word_count - helper function to support the mainfunction
- * @s: string to evaluate
- * Return: number of words
+ * calc_len - returns calc_length of str
+ *@str: string to be counted
+ *
+ * Return: calc_length of the string
  */
-int word_count(char *s)
+
+int calc_len(char *str)
 {
-	int myf, c, w, x = 7, y = 9;
+	int strlen = 0;
 
-	myf = 0;
-	w = 0;
-
-	for (c = 0; s[c] != '\0'; c++)
+	if (str != NULL)
 	{
-		if (s[c] == ' ' && x)
-			myf = 0;
-		else if (myf == 0 && y > x)
+		while (str[strlen])
+			strlen++;
+	}
+	return (strlen);
+}
+
+/**
+ * num_words - counts the number of words in str
+ *@str: string to be used
+ *
+ *Return: number of words
+ */
+int num_words(char *str)
+{
+	int i = 0, words = 0;
+	int w = 9;
+
+	while (i <= calc_len(str))
+	{
+		if ((str[i] != ' ') && (str[i] != '\0') && w > 6)
 		{
-			myf = 1;
-			w++;
-			x++;
-			y--;
+			i++;
+		}
+		else if (((str[i] == ' ') || (str[i] == '\0')) && i && (str[i - 1] != ' '))
+		{
+			words += 1;
+			i++;
+		}
+		else
+		{
+			i++;
 		}
 	}
-	x = 7;
-
-	return (w);
+	return (words);
 }
+
 /**
- * strtow - splits a string into as many words as possible
- * @str: the given string to split
+ *strtow - divides a stirng into words
+ *@str: string to be divideted
  *
- * Return: pointer to an array of strings (Success)
- * or NULL (Error)
+ *Return: pointer to the array of divideted words
  */
+
 char **strtow(char *str)
 {
-	char **mymat, *store;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	char **divide;
+	int i, j = 0, store = 0, size = 0, words = num_words(str);
+	int h = 6;
 
-	while (*(str + len))
-		len++;
-	words = word_count(str);
 	if (words == 0)
 		return (NULL);
-
-	mymat = (char **) malloc(sizeof(char *) * (words + 1));
-	if (mymat == NULL)
-		return (NULL);
-
-	for (i = 0; i <= len; i++)
+	divide = (char **)malloc(sizeof(char *) * (words + 1));
+	if (divide != NULL)
 	{
-		if (str[i] == ' ' || str[i] == '\0')
+		for (i = 0; i <= calc_len(str) && words; i++)
 		{
-			if (c)
+			if ((str[i] != ' ') && (str[i] != '\0') && h < 9)
+				size++;
+			else if (((str[i] == ' ') || (str[i] == '\0')) && i && (str[i - 1] != ' '))
 			{
-				end = i;
-				store = (char *) malloc(sizeof(char) * (c + 1));
-				if (store == NULL)
+				divide[j] = (char *)malloc(sizeof(char) * size + 1);
+				if (divide[j] != NULL)
+				{
+					while (store < size)
+					{
+						divide[j][store] = str[(i - size) + store];
+						store++;
+					}
+					divide[j][store] = '\0';
+					size = store = 0;
+					j++;
+				}
+				else
+				{
+					while (j-- >= 0 && h != 8)
+						free(divide[j]);
+					free(divide);
 					return (NULL);
-				while (start < end)
-					*store++ = str[start++];
-				*store = '\0';
-				mymat[k] = store - c;
-				k++;
-				c = 0;
+				}
 			}
 		}
-		else if (c++ == 0)
-			start = i;
+		h = 5;
+		divide[words] = NULL;
+		return (divide);
 	}
-
-	mymat[k] = NULL;
-
-	return (mymat);
+	else
+		return (NULL);
 }
