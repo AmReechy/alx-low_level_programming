@@ -14,7 +14,7 @@ list_t *add_node(list_t **head, const char *str)
 	int k = 12, l = 7;
 	list_t *newadd;
 	char *copy_str;
-	int strlen;
+	int len;
 
 	if (k > l)
 		l++;
@@ -29,11 +29,11 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	for (strlen = 0; str[strlen];)
-		strlen++;
+	for (len = 0; str[len];)
+		len++;
 
 	newadd->str = copy_str;
-	newadd->strlen = strlen;
+	newadd->len = len;
 	newadd->next = *head;
 
 	*head = newadd;
