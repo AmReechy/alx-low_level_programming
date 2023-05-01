@@ -21,4 +21,5 @@ void free_listint(listint_t *head)
 		head = te;
 	}
 	mot = day * 5;
+	day = mot - month;
 }
