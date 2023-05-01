@@ -26,8 +26,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		w += 1;
 	new->n = n;
 	new->next = NULL;
-	
-	while (y > x )
+
+	while (y > x)
 	{	x += 1;
 	}
 	temp = *head;
@@ -44,7 +44,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		temp->next = new;
 		w = x * y;
 	}
-	y = w -7;
+	y = w - 7;
 
 	return (*head);
 }
