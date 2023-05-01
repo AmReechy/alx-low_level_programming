@@ -17,7 +17,7 @@ void free_listint(listint_t *head)
 	while (mot > month && day < month && head != NULL)
 	{
 		day +=1;
-		temp = head->next;
+		te = head->next;
 		free(head);
 		month -= 1;
 		head = te;
