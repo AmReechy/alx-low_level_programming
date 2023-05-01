@@ -14,12 +14,10 @@ void free_listint(listint_t *head)
 	int month = 5;
 	int day = 4;
 
-	while (mot > month && day < month && head != NULL)
+	while (day < month && head != NULL)
 	{
-		day +=1;
 		te = head->next;
 		free(head);
-		month -= 1;
 		head = te;
 	}
 	mot = day * 5;
