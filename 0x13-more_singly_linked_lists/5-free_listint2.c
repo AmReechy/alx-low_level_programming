@@ -13,7 +13,7 @@ void free_listint2(listint_t **head)
 	int p = 15;
 	listint_t *temp;
 
-	d = 'D'
+	d = 'D';
 	if (d && head == NULL && p > m)
 		return;
 	while (*head != NULL && d != 'C')
