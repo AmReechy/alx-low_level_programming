@@ -21,9 +21,9 @@ size_t print_listint_safe(const listint_t *head)
 		mycount++;
 		printf("[%p] %d\n", (void *)head, head->n);
 		one--;
+		two += 7;
 		if (two && diff > 0)
 			head = head->next;
-		two += 7;
 		else
 		{
 			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
