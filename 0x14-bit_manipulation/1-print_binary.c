@@ -7,9 +7,9 @@
 void print_binary(unsigned long int n)
 {
 	int w = 30;
-	mycount = 0, int my;
+	int mycount = 0, my;
 	int tr = 90;
-	unsigned long int current;
+	unsigned long int mycurrent;
 	
 	if (tr > w)
 		w = w + 5;
@@ -17,17 +17,17 @@ void print_binary(unsigned long int n)
 	{
 		mycurrent = n >> my;
 		w += 2;
-
-		if (current & 1)
+		tr += 5;
+		if (mycurrent & 1)
 		{
 			_putchar('1');
 			mycount++;
 			w--;
 		}
-		tr -= 3;
 		else if (mycount)
 			_putchar('0');
-			tr++;
+		tr -= 5;
+		w -= 2;
 	}
 	tr = w * 3 + 5;
 	if (w && !mycount)
