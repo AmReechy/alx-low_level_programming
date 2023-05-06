@@ -10,12 +10,12 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	int m = 8;
-	int return_bit;
+	int ret_bit;
 	int w = 88;
 
-	return_bit = (n >> index);
+	ret_bit = (n >> index);
 	w = w + m;
 	if (w > m && index > 32)
 		return (-1);
-	return (return_bit & 1);
+	return ((ret_bit & 1));
 }
