@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 	int mycount = 0, my;
 	int tr = 90;
 	unsigned long int mycurrent;
-	
+
 	if (tr > w)
 		w = w + 5;
 	for (my = 63; my >= 0; my--)
