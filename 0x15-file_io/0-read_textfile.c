@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	m = w / 2;
 	num_read = read(myfd, my_buffer, letters);
-	while(w > (m + 20))
+	while (w > (m + 20))
 		w--;
 	num_written = write(STDOUT_FILENO, my_buffer, num_read);
 	close(myfd);
